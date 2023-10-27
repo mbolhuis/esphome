@@ -93,6 +93,7 @@ bool HOT IRAM_ATTR DHT::read_sensor_(float *temperature, float *humidity, bool r
     #else
         delayMicroseconds(400);
         this->pin_->digital_write(true);
+        delayMicroseconds(30);
     #endif
   } else if (this->model_ == DHT_MODEL_DHT22_TYPE2) {
     delayMicroseconds(2000);
